@@ -7,7 +7,7 @@ interface Props {
 export default class MyDocument extends Document<Props> {
   render() {
     return (
-      <Html lang={this.props.locale.split("-")[0]}>
+      <Html lang={this.props.locale}>
         <Head>
           <meta name="viewport" content="width=device-width,height=device-height" key="viewport" />
           <meta name="theme-color" content="#fff" key="themeColor" />
