@@ -1,19 +1,38 @@
-import React, { FC } from 'react';
-import Head from 'next/head';
-import PostPanel from './components/post';
-import Post from './components/post';
+import React from 'react'
+import Link from 'next/link'
+import axios from 'axios';
 
-const Home: FC = () => {
-  return (
-    <div>
-      <Head>
-        <title>Yoshida</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>Home</div>
-      <PostPanel />
-   </div>
-  );
+type Props = {
+  data: {
+    data: []
+  }
 }
 
-export default Home;
+function Index(props: Props) {
+  return (
+    <div>
+      <ul>
+        {props.data.data.map((post: any) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+export async function getServerSideProps() {
+  try {
+    const res = await axios.get('http://localhost:3001/api/v1/posts')
+    console.log(res.data);
+    return {
+      props: {
+        data: res.data
+      }
+    }
+  } catch(e) {
+    console.log(e);
+    return;
+  }
+}
+
+export default Index
