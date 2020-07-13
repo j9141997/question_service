@@ -1,21 +1,30 @@
 import React from 'react'
 import Link from 'next/link'
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 type Props = {
   data: {
-    data: []
+    data?: []
   }
+}
+
+type post = {
+  id: number
+  title?: string
 }
 
 function Index(props: Props) {
   return (
     <div>
       <ul>
-        {props.data.data.map((post: any) => (
+        {props.data.data.map((post: post) => (
           <li key={post.id}>{post.title}</li>
         ))}
       </ul>
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
     </div>
   )
 }

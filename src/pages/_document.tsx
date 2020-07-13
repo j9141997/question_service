@@ -1,21 +1,44 @@
-import Document, { DocumentContext, Html, Head, Main, NextScript } from "next/document";
+import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
+import { ServerStyleSheet as StyledComponentSheets } from 'styled-components';
+import { ServerStyleSheets as MaterialUiServerStyleSheets } from '@material-ui/styles';
 
-interface Props {
-  locale: "en-us" | "ja-JP"
-}
+export default class MyDocument extends Document {
+  static async getServerSideProps(ctx: DocumentContext) {
+    const styledComponentSheets = new StyledComponentSheets();
+    const materialUiServerStyleSheets = new MaterialUiServerStyleSheets();
+    const originalRenderPage = ctx.renderPage;
 
-export default class MyDocument extends Document<Props> {
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props =>
+            styledComponentSheets.collectStyles(
+              materialUiServerStyleSheets.collect(<App {...props} />)
+            )
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+      return {
+        ...initialProps,
+        styles: (
+          <>
+            {initialProps.styles}
+            {styledComponentSheets.getStyleElement()}
+            {materialUiServerStyleSheets.getStyleElement()}
+          </>
+        )
+      };
+    } finally {
+      styledComponentSheets.seal();
+    }
+  }
+
   render() {
     return (
-      <Html lang={this.props.locale}>
-        <Head>
-          <meta name="viewport" content="width=device-width,height=device-height" key="viewport" />
-          <meta name="theme-color" content="#fff" key="themeColor" />
-        </Head>
-
+      <Html lang="en">
+        <Head />
         <body>
           <Main />
-
           <NextScript />
         </body>
       </Html>
