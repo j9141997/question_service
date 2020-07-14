@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 import { ThemeProvider as MaterialUIThemeProvider, Theme, createMuiTheme  } from '@material-ui/core/styles';
+import red from '@material-ui/core/colors/red';
 import { StylesProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 // import '../styles/global.scss';
@@ -15,7 +16,7 @@ const theme: Theme = createMuiTheme({
       main: '#19857b'
     },
     error: {
-      main: '#fff'
+      main: red.A400
     },
     background: {
       default: '#fff'
