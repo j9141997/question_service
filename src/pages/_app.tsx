@@ -5,6 +5,7 @@ import { ThemeProvider as MaterialUIThemeProvider, Theme, createMuiTheme  } from
 import red from '@material-ui/core/colors/red';
 import { StylesProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Header from './components/organism/header';
 // import '../styles/global.scss';
 
 const theme: Theme = createMuiTheme({
@@ -38,6 +39,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
       <MaterialUIThemeProvider theme={theme}>
         <StyledComponentsThemeProvider theme={theme}>
           <CssBaseline />
+          <Header />
           <Component {...pageProps} />
         </StyledComponentsThemeProvider>
       </MaterialUIThemeProvider>
