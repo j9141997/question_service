@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             よしだ
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">ログイン</Button>
         </Toolbar>
       </AppBar>
     </div>
