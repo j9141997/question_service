@@ -23,7 +23,7 @@ function Index(props: Props) {
         ))}
       </ul>
       <Button variant="contained" color="primary">
-        Hello World
+        登録
       </Button>
     </div>
   )

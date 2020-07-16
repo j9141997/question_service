@@ -1,4 +1,5 @@
 import Document, { DocumentContext, Html, Head, Main, NextScript } from 'next/document';
+import { GetServerSideProps } from 'next'
 import { ServerStyleSheet as StyledComponentSheets } from 'styled-components';
 import { ServerStyleSheets as MaterialUiServerStyleSheets } from '@material-ui/styles';
 
@@ -17,7 +18,7 @@ export default class MyDocument extends Document {
             )
         });
 
-      const initialProps = await Document.getInitialProps(ctx);
+      const initialProps = await MyDocument.getServerSideProps(ctx);
       return {
         ...initialProps,
         styles: (
@@ -35,7 +36,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="ja">
         <Head />
         <body>
           <Main />
