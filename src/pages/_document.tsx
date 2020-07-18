@@ -38,6 +38,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"></link>
         <body>
           <Main />
           <NextScript />
