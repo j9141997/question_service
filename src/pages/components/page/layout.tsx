@@ -6,7 +6,6 @@ const Layout = props => {
   return (
     <div className='layout'>
       <Header />
-      <h1>yoshida</h1>
       { children }
     </div>
   );

@@ -3,7 +3,7 @@ import { ServerStyleSheet as StyledComponentSheets } from 'styled-components';
 import { ServerStyleSheets as MaterialUiServerStyleSheets } from '@material-ui/styles';
 
 export default class MyDocument extends Document {
-  static async getInitProps(ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext) {
     const styledComponentSheets = new StyledComponentSheets();
     const materialUiServerStyleSheets = new MaterialUiServerStyleSheets();
     const originalRenderPage = ctx.renderPage;
@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
             )
         });
 
-      const initialProps = await Document.getInitProps(ctx);
+      const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
         styles: (
@@ -37,7 +37,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"></link>
         <body>
           <Main />
           <NextScript />
