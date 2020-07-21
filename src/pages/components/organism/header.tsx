@@ -32,7 +32,7 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            よしだ
+            Qサービス
           </Typography>
           <Button color="inherit">ログイン</Button>
         </Toolbar>
