@@ -23,7 +23,10 @@ function Index(props: Props) {
         ))}
       </ul>
       <Button variant="contained" color="primary">
-        質問する
+        質問
+      </Button>
+      <Button variant="contained" color="primary">
+        回答
       </Button>
     </div>
   )
