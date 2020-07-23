@@ -3,6 +3,8 @@ import Link from 'next/link'
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 
+import Form from './components/organism/Form';
+
 type Props = {
   data: {
     data?: []
@@ -24,10 +26,8 @@ function Index(props: Props) {
       </ul>
       <Button variant="contained" color="primary">
         質問
-      </Button>
-      <Button variant="contained" color="primary">
-        回答
-      </Button>
+      </Button >
+      <Form name="answer" />
     </div>
   )
 }
