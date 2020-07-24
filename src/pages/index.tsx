@@ -11,17 +11,18 @@ type Props = {
   }
 }
 
-type post = {
+type question = {
   id: number
-  title?: string
+  text: string
 }
 
 function Index(props: Props) {
+  console.log(props);
   return (
     <div>
       <ul>
-        {props.data.data.map((post: post) => (
-          <li key={post.id}>{post.title}</li>
+        {props.data.map((question: question) => (
+          <li key={question.id}>{question.text}</li>
         ))}
       </ul>
       <Button variant="contained" color="primary">
@@ -34,7 +35,7 @@ function Index(props: Props) {
 
 export async function getServerSideProps() {
   try {
-    const res = await axios.get('http://localhost:3001/api/v1/posts')
+    const res = await axios.get('http://localhost:3001/api/v1/questions')
     console.log(res.data);
     return {
       props: {
