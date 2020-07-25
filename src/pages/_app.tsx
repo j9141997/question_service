@@ -4,8 +4,8 @@ import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-component
 import { ThemeProvider as MaterialUIThemeProvider } from '@material-ui/core/styles';
 import { StylesProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Layout from './components/page/layout';
-import theme from './components/theme';
+import Layout from '../components/template/layout';
+import theme from '../components/theme';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
