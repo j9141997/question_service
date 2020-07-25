@@ -2,8 +2,8 @@ import React, { ComponentProps } from 'react'
 import Link from 'next/link'
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
-import { QuestionList } from './components/organism/QuestionList';
-import Form from './components/organism/Form';
+import { QuestionList } from '../components/organism/QuestionList';
+import Form from '../components/organism/Form';
 
 type Props = {
   questions: ComponentProps<typeof QuestionList>["questions"];
