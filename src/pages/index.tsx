@@ -1,37 +1,25 @@
-import React from 'react'
+import React, { ComponentProps } from 'react'
 import Link from 'next/link'
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
-
+import { QuestionList } from './components/organism/QuestionList';
 import Form from './components/organism/Form';
 
 type Props = {
-  data: {
-    data?: []
-  }
+  questions: ComponentProps<typeof QuestionList>["questions"];
 }
 
-type question = {
-  id: number
-  text: string
-}
-
-function Index(props: Props) {
-  console.log(props);
-  return (
-    <div>
-      <ul>
-        {props.data.map((question: question) => (
-          <li key={question.id}>{question.text}</li>
-        ))}
-      </ul>
-      <Button variant="contained" color="primary">
+const Index = ({
+  questions
+}: Props) => (
+  <React.Fragment>
+    <QuestionList questions={questions}/>
+     <Button variant="contained" color="primary">
         質問
-      </Button >
-      <Form name="answer" />
-    </div>
-  )
-}
+    </Button >
+    <Form name="answer" />
+  </React.Fragment>
+);
 
 export async function getServerSideProps() {
   try {
@@ -39,7 +27,7 @@ export async function getServerSideProps() {
     console.log(res.data);
     return {
       props: {
-        data: res.data
+        questions: res.data
       }
     }
   } catch(e) {
@@ -48,4 +36,4 @@ export async function getServerSideProps() {
   }
 }
 
-export default Index
+export default Index;
