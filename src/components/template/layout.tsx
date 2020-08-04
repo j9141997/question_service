@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 
-import Header from '../organism/header';
+import { ButtonAppBar as Header }from '../organism/header';
 import Container from '@material-ui/core/Container';
-
 
 type Props = {
   children: ReactNode;
@@ -16,6 +15,5 @@ const Layout = ({ children }: Props) => (
     </Container>
   </div>
 );
-
 
 export default Layout;
