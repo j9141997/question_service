@@ -20,11 +20,7 @@ const Index = ({
     <Form name="answer" />
   </React.Fragment>
 );
-
-export async function getServerSideProps(ctx) {
-  if (ctx) {
-    console.log(ctx.req);
-  }
+export async function getServerSideProps() {
   try {
     const res = await axios.get('http://localhost:3001/api/v1/questions');
     return {
