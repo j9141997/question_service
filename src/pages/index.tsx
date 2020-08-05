@@ -13,25 +13,26 @@ const Index = ({
   questions
 }: Props) => (
   <React.Fragment>
-    <QuestionList questions={questions}/>
+    {/* <QuestionList questions={questions}/> */}
      <Button variant="contained" color="primary">
         質問
     </Button >
     <Form name="answer" />
   </React.Fragment>
 );
-export async function getServerSideProps() {
-  try {
-    const res = await axios.get('http://localhost:3001/api/v1/questions');
-    return {
-      props: {
-        questions: res.data
-      }
-    }
-  } catch(e) {
-    console.log(e);
-    return;
-  }
-}
+
+// export async function getServerSideProps() {
+//   try {
+//     const res = await axios.get('http://localhost:3001/api/v1/questions');
+//     return {
+//       props: {
+//         questions: res.data
+//       }
+//     }
+//   } catch(e) {
+//     console.log(e);
+//     return;
+//   }
+// }
 
 export default Index;

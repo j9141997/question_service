@@ -10,7 +10,9 @@ export const ButtonAppBar = () => (
       <ToolBar>
         <LeftArea>
           <HeaderTitle variant="h6">
-            shitumon
+            <a href="/">
+              shitumon
+            </a>
           </HeaderTitle>
         </LeftArea>
         <RightArea>
