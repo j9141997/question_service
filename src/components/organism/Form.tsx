@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Button from '@material-ui/core/Button';
 
+type Props = {
+  children: ReactNode;
+}
 
-const Form = props => {
-  const { name } = props;
+const Form = ({ children }: Props) => {
   return (
     <React.Fragment>
       <form action="">
-        {props.children}
+        {children}
       </form>
     </React.Fragment>
   );
