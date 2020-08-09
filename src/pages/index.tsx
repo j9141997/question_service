@@ -21,18 +21,18 @@ const Index = ({
   </React.Fragment>
 );
 
-// export async function getServerSideProps() {
-//   try {
-//     const res = await axios.get('http://localhost:3001/api/v1/questions');
-//     return {
-//       props: {
-//         questions: res.data
-//       }
-//     }
-//   } catch(e) {
-//     console.log(e);
-//     return;
-//   }
-// }
+export async function getServerSideProps() {
+  try {
+    const res = await axios.get('http://localhost:3001/api/v1/questions');
+    return {
+      props: {
+        questions: res.data
+      }
+    }
+  } catch(e) {
+    console.log(e);
+    return;
+  }
+}
 
 export default Index;
