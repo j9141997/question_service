@@ -7,10 +7,7 @@ const Form = props => {
   return (
     <React.Fragment>
       <form action="">
-        <input type="text" name={name} />
-        <Button variant="contained" color="primary">
-          回答
-        </Button>
+        {props.children}
       </form>
     </React.Fragment>
   );
