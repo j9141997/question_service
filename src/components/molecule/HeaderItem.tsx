@@ -6,7 +6,9 @@ import { Button } from '../atom/Button';
 export const HeaderItem = () => (
   <React.Fragment>
     <Link href="/auth/register">
-      ログイン / 新規登録
+      <a>
+        ログイン / 新規登録
+      </a>
     </Link>
     <Button color="inherit">
       回答する
