@@ -6,6 +6,7 @@ import { StylesProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Layout from '../components/template/layout';
 import theme from '../components/theme';
+import { GlobalStyle } from '../style/globalStyle';
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
 
@@ -22,6 +23,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         <StyledComponentsThemeProvider theme={theme}>
           <CssBaseline />
           <Layout>
+            <GlobalStyle />
             <Component {...pageProps} />
           </Layout>
         </StyledComponentsThemeProvider>
