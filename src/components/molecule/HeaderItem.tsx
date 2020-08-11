@@ -1,17 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { Button } from '../atom/Button';
+import { MainButton } from '../atom/MainButton'
+import { SubButton } from '../atom/SubButton';
 
 export const HeaderItem = () => (
   <React.Fragment>
-    <Link href="/auth/register">
-      <a>
-        ログイン / 新規登録
-      </a>
+    <Link href="/auth/register" passHref>
+      <MainButton>
+        新規登録
+      </MainButton>
     </Link>
-    <Button color="inherit">
-      回答する
-    </Button>
+    <Link href="/auth/login">
+      <SubButton>
+        ログイン
+      </SubButton>
+    </Link>
   </React.Fragment>
 );
+

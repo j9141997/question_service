@@ -1,18 +1,19 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { HeaderItem } from '../molecule/HeaderItem';
+import DefaultLink from '../atom/DefaultLink';
 
 export const ButtonAppBar = () => (
     <StyledAppBar position="static" color="default">
       <ToolBar>
         <LeftArea>
           <HeaderTitle variant="h6">
-            <a href="/">
-              shitumon
-            </a>
+            <DefaultLink>
+              Shitumon
+            </DefaultLink>
           </HeaderTitle>
         </LeftArea>
         <RightArea>

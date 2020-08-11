@@ -3,11 +3,13 @@ import Button from '@material-ui/core/Button';
 import { QuestionList } from '../../components/organism/QuestionList';
 import Form from '../../components/organism/Form';
 
-const register = (props) => (
+const login = (props) => (
   <React.Fragment>
-    <h1>新規登録</h1>
-    <input type="nickname" placeholder="ニックネームを入力してください" required/>
+    <h1>ログイン</h1>
+    <input type="text" name="email" />
+    <input type="text" name="password" />
+    <input type="submit" value="ログインする"/>
   </React.Fragment>
 );
 
-export default register;
+export default login;
