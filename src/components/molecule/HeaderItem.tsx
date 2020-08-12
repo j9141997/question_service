@@ -8,7 +8,7 @@ export const HeaderItem = () => (
   <React.Fragment>
     <Link href="/auth/register" passHref>
       <MainButton>
-        新規登録
+        新規登録/ログイン
       </MainButton>
     </Link>
     <Link href="/auth/login">
