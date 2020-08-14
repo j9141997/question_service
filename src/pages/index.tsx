@@ -35,8 +35,11 @@ export async function getServerSideProps() {
       }
     }
   } catch(e) {
-    console.log(e);
-    return [];
+    return {
+      props: {
+        questions: []
+      }
+    }
   }
 }
 
