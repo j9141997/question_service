@@ -9,9 +9,10 @@ type Props = {
 }
 
 const DefaultLink = ({
-  children
+  children,
+  href
 }: Props) => (
-  <CommonLink>
+  <CommonLink href={href}>
     { children }
   </CommonLink>
 )
