@@ -39,4 +39,6 @@ const HeaderTitle = styled(Typography)`
   flex-grow: 1;
   font-weight: 800;
 `;
-const RightArea = styled.div``;
+const RightArea = styled.div`
+  display: flex;
+`;
