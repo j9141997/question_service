@@ -1,20 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { MainButton } from '../atom/MainButton'
-import { SubButton } from '../atom/SubButton';
+import { PrimaryButton, SecondaryButton } from '../atom/Button'
 
 export const HeaderItem = () => (
   <React.Fragment>
     <Link href="/auth/register" passHref>
-      <MainButton>
-        新規登録/ログイン
-      </MainButton>
+      <PrimaryButton>
+        新規登録
+      </PrimaryButton>
     </Link>
-    <Link href="/auth/login">
-      <SubButton>
+    <Link href="/auth/login" passHref>
+      <SecondaryButton>
         ログイン
-      </SubButton>
+      </SecondaryButton>
     </Link>
   </React.Fragment>
 );
