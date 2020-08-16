@@ -41,4 +41,5 @@ const HeaderTitle = styled(Typography)`
 `;
 const RightArea = styled.div`
   display: flex;
+  font-size: 1.2rem;
 `;
