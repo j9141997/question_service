@@ -26,6 +26,9 @@ export const SecondaryButton = React.forwardRef<HTMLAnchorElement, ButtonProps>(
 
 const Button = styled.div`
   @media (min-width: 1024px) {
-    padding: 10px 16px;
+    padding: 8px 16px;
   }
+  color: #202020;
+  border: 2px solid #202020;
+  border-radius: 4px;
 `
