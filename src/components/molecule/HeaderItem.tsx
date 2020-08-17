@@ -1,20 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 
-import { PrimaryButton, SecondaryButton } from '../atom/Button'
+import Button from '../atom/Button'
 
+
+const HeaderItemContainer = styled.div`
+  margin: 0 6px;
+`
 export const HeaderItem = () => (
   <React.Fragment>
-    <Link href="/auth/register" passHref>
-      <PrimaryButton>
-        新規登録
-      </PrimaryButton>
-    </Link>
-    <Link href="/auth/login" passHref>
-      <SecondaryButton>
-        ログイン
-      </SecondaryButton>
-    </Link>
+    <HeaderItemContainer>
+      <Link href="/auth/login" passHref>
+        <Button primary={false}>
+          ログイン
+        </Button>
+      </Link>
+    </HeaderItemContainer>
+    <HeaderItemContainer>
+      <Link href="/auth/register" passHref>
+        <Button primary={true}>
+          新規登録
+        </Button>
+      </Link>
+    </HeaderItemContainer>
   </React.Fragment>
 );
-
