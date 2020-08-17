@@ -6,23 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import { HeaderItem } from '../molecule/HeaderItem';
 import DefaultLink from '../atom/DefaultLink';
 
-export const ButtonAppBar = () => (
-    <StyledAppBar position="static" color="default">
-      <ToolBar>
-        <LeftArea>
-          <HeaderTitle variant="h6">
-            <DefaultLink>
-              Shitumon
-            </DefaultLink>
-          </HeaderTitle>
-        </LeftArea>
-        <RightArea>
-          <HeaderItem/>
-        </RightArea>
-      </ToolBar>
-    </StyledAppBar>
-);
-
 const StyledAppBar = styled(AppBar)`
   display: block;
 `;
@@ -38,8 +21,28 @@ const LeftArea = styled.div`
 const HeaderTitle = styled(Typography)`
   flex-grow: 1;
   font-weight: 800;
+  font-size: 1.8rem;
 `;
 const RightArea = styled.div`
   display: flex;
   font-size: 1.2rem;
 `;
+
+const Header = () => (
+    <StyledAppBar position="static" color="default">
+      <ToolBar>
+        <LeftArea>
+          <HeaderTitle variant="h6">
+            <DefaultLink>
+              Shitumon
+            </DefaultLink>
+          </HeaderTitle>
+        </LeftArea>
+        <RightArea>
+          <HeaderItem/>
+        </RightArea>
+      </ToolBar>
+    </StyledAppBar>
+); 
+
+export default Header;
