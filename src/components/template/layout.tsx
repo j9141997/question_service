@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { ButtonAppBar as Header }from '../organism/header';
+import Header from '../organism/Header';
 import Container from '@material-ui/core/Container';
 
 type Props = {
