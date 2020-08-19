@@ -2,7 +2,7 @@ import React, { ComponentProps } from 'react'
 import styled from 'styled-components';
 
 import AuthContainer from '../../components/organism/AuthContainer';
-import InputFiled from '../../components/molecule/InputField';
+import InputGroup from '../../components/molecule/InputGroup';
 import Button from '@material-ui/core/Button';
 import { QuestionList } from '../../components/organism/QuestionList';
 import Form from '../../components/organism/Form';
@@ -15,9 +15,9 @@ const RegisterTitle = styled.h1`
 const register = (props) => (
   <AuthContainer>
     <RegisterTitle>Shitumonへようこそ！</RegisterTitle>
-    <InputFiled labelName="ニックネーム" name="nickname" />
-    <InputFiled labelName="メールアドレス" name="email" />
-    <InputFiled labelName="パスワード" name="password" />
+    <InputGroup labelName="ニックネーム" name="nickname" />
+    <InputGroup labelName="メールアドレス" name="email" />
+    <InputGroup labelName="パスワード" name="password" />
     <input type="nickname" placeholder="ニックネームを入力してください" required/>
   </AuthContainer>
 );

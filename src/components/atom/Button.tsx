@@ -9,7 +9,7 @@ type Props = {
   onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void;
   href?: string | undefined;
   ref?: any;
-}; 
+};
 
 type ButtonProps = Pick<Props, 'primary'>;
 
@@ -17,11 +17,12 @@ const StyledButton = styled.div<ButtonProps>`
   @media (min-width: 1024px) {
     padding: 8px 16px;
   }
+  padding: 6px 8px;
   border: 2px solid #202020;
   border-radius: 4px;
   ${props => props.primary ? `
     color: #FFF;
-    background-color: ${theme.palette.primary.main}; 
+    background-color: ${theme.palette.primary.main};
     border: 2px solid ${theme.palette.primary.main};
   ` : ``}
 `
