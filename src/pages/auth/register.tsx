@@ -15,10 +15,9 @@ const RegisterTitle = styled.h1`
 const register = (props) => (
   <AuthContainer>
     <RegisterTitle>Shitumonへようこそ！</RegisterTitle>
-    <InputGroup labelName="ニックネーム" name="nickname" />
-    <InputGroup labelName="メールアドレス" name="email" />
-    <InputGroup labelName="パスワード" name="password" />
-    <input type="nickname" placeholder="ニックネームを入力してください" required/>
+      <InputGroup labelName="ニックネーム" name="nickname" placeholder="Shitumonmon" />
+      <InputGroup labelName="メールアドレス" name="email" placeholder="shitumon@shitumon.com" />
+      <InputGroup labelName="パスワード" name="password" placeholder="6文字以上で入力してください" />
   </AuthContainer>
 );
 
