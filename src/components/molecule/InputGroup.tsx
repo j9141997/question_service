@@ -4,25 +4,31 @@ import styled from 'styled-components';
 type Props = {
   labelName: string;
   name: string;
+  placeholder?: string;
 }
 
-type labelProps = Pick<Props, 'name'>;
-
-const Input = styled.div`
+const Group = styled.div`
   text-align: left;
 `
-const InputLabel = styled.label``
-const InputField = styled.input`
+const Label = styled.label``
+const Input = styled.input`
   width: 100%;
+  @media (min-width: 1024px) {
+    font-size: 1.6rem;
+  }
 `
 
-const InputGroup: FC<Props> = ({ labelName, name }) => (
-  <Input>
-    <InputLabel htmlFor={name}>{ labelName }</InputLabel>
+const InputGroup: FC<Props> = ({
+  labelName,
+  name,
+  placeholder 
+  }) => (
+  <Group>
+    <Label htmlFor={name}>{ labelName }</Label>
     <div>
-      <InputField name={name} />
+      <Input name={name} placeholder={placeholder} />
     </div>
-  </Input>
+  </Group>
 );
 
 export default InputGroup;
