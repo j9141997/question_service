@@ -8,9 +8,13 @@ type Props = {
 
 type labelProps = Pick<Props, 'name'>;
 
-const Input = styled.div``
+const Input = styled.div`
+  text-align: left;
+`
 const InputLabel = styled.label``
-const InputField = styled.input``
+const InputField = styled.input`
+  width: 100%;
+`
 
 const InputGroup: FC<Props> = ({ labelName, name }) => (
   <Input>
