@@ -17,14 +17,22 @@ const StyledButton = styled.div<ButtonProps>`
   @media (min-width: 1024px) {
     padding: 8px 16px;
   }
-  border: 2px solid #202020;
+  border: 1px solid #202020;
   border-radius: 4px;
+  &:hover {
+    color: #000;
+    background-color: #e8e8e8;
+  }
   ${({ primary }) =>
     primary &&
     `
     color: #FFF;
     background-color: ${theme.palette.primary.main}; 
-    border: 2px solid ${theme.palette.primary.main};
+    border: 1px solid ${theme.palette.primary.main};
+    &:hover {
+      color: #FFF;
+      background-color: #3e6f50;
+    }
   `}
 `
 
