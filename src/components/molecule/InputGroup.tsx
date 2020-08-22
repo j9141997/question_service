@@ -1,10 +1,10 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC } from 'react'
+import styled from 'styled-components'
 
 type Props = {
-  labelName: string;
-  name: string;
-  placeholder?: string;
+  labelName: string
+  name: string
+  placeholder?: string
 }
 
 const Group = styled.div`
@@ -18,17 +18,13 @@ const Input = styled.input`
   }
 `
 
-const InputGroup: FC<Props> = ({
-  labelName,
-  name,
-  placeholder 
-  }) => (
+const InputGroup: FC<Props> = ({ labelName, name, placeholder }) => (
   <Group>
-    <Label htmlFor={name}>{ labelName }</Label>
+    <Label htmlFor={name}>{labelName}</Label>
     <div>
       <Input name={name} placeholder={placeholder} />
     </div>
   </Group>
-);
+)
 
-export default InputGroup;
+export default InputGroup

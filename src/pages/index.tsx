@@ -1,22 +1,21 @@
-import React, { ComponentProps } from 'react'
+import React, { ComponentProps, FC } from 'react'
+import { GetServerSideProps } from 'next'
 import Link from 'next/link'
-import axios from 'axios';
-import Button from '@material-ui/core/Button';
-import { QuestionList } from '../components/organism/QuestionList';
-import Form from '../components/organism/Form';
+import axios from 'axios'
+import Button from '@material-ui/core/Button'
+import { QuestionList } from '../components/organism/QuestionList'
+import Form from '../components/organism/Form'
 
 type Props = {
-  questions: ComponentProps<typeof QuestionList>["questions"];
+  questions: ComponentProps<typeof QuestionList>['questions']
 }
 
-const Index = ({
-  questions
-}: Props) => (
+const Index: FC<Props> = ({ questions }) => (
   <React.Fragment>
-    <QuestionList questions={questions}/>
-     <Button variant="contained" color="primary">
-        質問
-    </Button >
+    <QuestionList questions={questions} />
+    <Button variant="contained" color="primary">
+      質問
+    </Button>
     {/* <Form action="localhost:3001/questions">
       <input type="text" name="question" />
       <Button variant="contained" color="primary">
@@ -24,23 +23,15 @@ const Index = ({
       </Button>
     </Form> */}
   </React.Fragment>
-);
+)
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   try {
-    const res = await axios.get('http://localhost:3001/api/v1/questions');
-    return {
-      props: {
-        questions: res.data
-      }
-    }
-  } catch(e) {
-    return {
-      props: {
-        questions: []
-      }
-    }
+    const res = await axios.get('http://localhost:3001/api/v1/questions')
+    return { props: { questions: res.data } }
+  } catch (error) {
+    return { props: { questions: [] } }
   }
 }
 
-export default Index;
+export default Index

@@ -1,5 +1,5 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
 
 type Props = {
   questions: {
@@ -8,12 +8,10 @@ type Props = {
   }[]
 }
 
-export const QuestionList = ({
-  questions,
-}: Props) => (
+export const QuestionList = ({ questions }: Props) => (
   <ul>
     {questions.map((question) => (
       <li key={`question-${question.id}`}>{question.text}</li>
     ))}
   </ul>
-);
+)
