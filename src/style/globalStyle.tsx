@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 html{
@@ -8,4 +8,4 @@ html{
     color: #202020;
     text-decoration: none;
   }
-`;
+`

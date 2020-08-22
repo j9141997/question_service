@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 
 interface posts {
-  title: String;
+  title: String
 }
 
 const Post = () => {
-  const [posts, setPosts] = useState(null);
+  const [posts, setPosts] = useState(null)
   useEffect(() => {
-    axios.get("http://localhost:3001/api/v1/posts")
+    axios
+      .get('http://localhost:3001/api/v1/posts')
       .then((res) => {
-        setPosts(res.data.data);
+        setPosts(res.data.data)
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
       })
-  }, []);
+  }, [])
 
-  const renderPostList = (posts: posts) => {
-
-  }
+  const renderPostList = (posts: posts) => {}
 
   return (
     <div>
       Yoshida
-      <ul>
-      </ul>
+      <ul></ul>
     </div>
-  );
+  )
 }
 
-export default Post;
+export default Post

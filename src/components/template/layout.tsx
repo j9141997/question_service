@@ -1,19 +1,17 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from 'react'
 
-import Header from '../organism/Header';
-import Container from '@material-ui/core/Container';
+import Header from '../organism/Header'
+import Container from '@material-ui/core/Container'
 
 type Props = {
-  children: ReactNode;
+  children: ReactNode
 }
 
 const Layout = ({ children }: Props) => (
-  <div className='layout'>
+  <div className="layout">
     <Header />
-    <Container maxWidth="sm">
-      { children }
-    </Container>
+    <Container maxWidth="sm">{children}</Container>
   </div>
-);
+)
 
-export default Layout;
+export default Layout

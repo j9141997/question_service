@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import styled from 'styled-components';
+import { FC } from 'react'
+import styled from 'styled-components'
 
 const Article = styled.article`
   @media (min-width: 1024px) {
@@ -14,10 +14,8 @@ const CenterContainer = styled.div`
 `
 const AuthContainer: FC = ({ children }) => (
   <Article>
-    <CenterContainer>
-      { children }
-    </CenterContainer>
+    <CenterContainer>{children}</CenterContainer>
   </Article>
-);
+)
 
-export default AuthContainer;
+export default AuthContainer
