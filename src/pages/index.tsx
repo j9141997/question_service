@@ -8,10 +8,10 @@ import Form from '../components/organism/Form'
 
 type Props = {
   questions: ComponentProps<typeof QuestionList>['questions']
+  error?: string
 }
 
 const Index: FC<Props> = ({ questions, error }) => {
-  console.log(error)
   return (
     <React.Fragment>
       <QuestionList questions={questions} />
