@@ -17,6 +17,7 @@ const theme = createMuiTheme({
     },
     common: {
       black: 'rgba(0, 0, 0, 0.87)',
+      white: '#fff',
     },
   },
   typography: {
