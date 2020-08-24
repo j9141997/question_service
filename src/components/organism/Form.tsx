@@ -1,14 +1,15 @@
-import React, { ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import Button from '@material-ui/core/Button'
 
 type Props = {
   children: ReactNode
+  action: string
 }
 
-const Form = ({ children }: Props) => {
+const Form: FC<Props> = ({ children, action }) => {
   return (
     <React.Fragment>
-      <form action="">{children}</form>
+      <form action={action}>{children}</form>
     </React.Fragment>
   )
 }

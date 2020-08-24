@@ -1,35 +1,37 @@
-import React, { ComponentProps } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import AuthContainer from '../../components/organism/AuthContainer'
-import InputGroup from '../../components/molecule/InputGroup'
-import Button from '@material-ui/core/Button'
-import { QuestionList } from '../../components/organism/QuestionList'
 import Form from '../../components/organism/Form'
+import InputGroup from '../../components/molecule/InputGroup'
+import SubmitButton from '../../components/atom/SubmitButton'
 
 const RegisterTitle = styled.h1`
   font-size: 2.8rem;
   font-weight: 800;
 `
 
-const register = (props) => (
+const register: FC = () => (
   <AuthContainer>
-    <RegisterTitle>Shitumonへようこそ！</RegisterTitle>
-    <InputGroup
-      labelName="ニックネーム"
-      name="nickname"
-      placeholder="Shitumonmon"
-    />
-    <InputGroup
-      labelName="メールアドレス"
-      name="email"
-      placeholder="shitumon@shitumon.com"
-    />
-    <InputGroup
-      labelName="パスワード"
-      name="password"
-      placeholder="6文字以上で入力してください"
-    />
+    <Form action="hogehoge">
+      <RegisterTitle>Shitumonへようこそ！</RegisterTitle>
+      <InputGroup
+        labelName="ニックネーム"
+        name="nickname"
+        placeholder="Shitumonmon"
+      />
+      <InputGroup
+        labelName="メールアドレス"
+        name="email"
+        placeholder="shitumon@shitumon.com"
+      />
+      <InputGroup
+        labelName="パスワード"
+        name="password"
+        placeholder="6文字以上で入力してください"
+      />
+      <SubmitButton value="メールアドレスで登録" marginTop="24px" />
+    </Form>
   </AuthContainer>
 )
 
