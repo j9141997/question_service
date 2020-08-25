@@ -23,6 +23,14 @@ const Button = styled.input`
   border-color: ${theme.palette.primary.main};
   border-radius: 40px;
   margin-top: 24px;
+  cursor: pointer;
+  &:hover {
+    color: ${theme.palette.common.white};
+    background-color: #3e6f50;
+  }
+  &:focus {
+    outline: none;
+  }
   @media (min-width: 1024px) {
     min-width: 170px;
   }

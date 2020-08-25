@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button from '../atom/Button'
 
-const HeaderItemContainer = styled.div`
-  margin: 0 6px;
-`
-export const HeaderItem = () => (
+const HeaderItem: FC = () => (
   <React.Fragment>
     <HeaderItemContainer>
       <Link href="/auth/login" passHref>
@@ -21,3 +18,9 @@ export const HeaderItem = () => (
     </HeaderItemContainer>
   </React.Fragment>
 )
+
+const HeaderItemContainer = styled.div`
+  margin: 0 6px;
+`
+
+export default HeaderItem

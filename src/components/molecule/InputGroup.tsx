@@ -7,6 +7,15 @@ type Props = {
   placeholder?: string
 }
 
+const InputGroup: FC<Props> = ({ labelName, name, placeholder }) => (
+  <Group>
+    <Label htmlFor={name}>{labelName}</Label>
+    <div>
+      <Input name={name} placeholder={placeholder} />
+    </div>
+  </Group>
+)
+
 const Group = styled.div`
   text-align: left;
 `
@@ -33,14 +42,5 @@ const Input = styled.input`
     height: 40px;
   }
 `
-
-const InputGroup: FC<Props> = ({ labelName, name, placeholder }) => (
-  <Group>
-    <Label htmlFor={name}>{labelName}</Label>
-    <div>
-      <Input name={name} placeholder={placeholder} />
-    </div>
-  </Group>
-)
 
 export default InputGroup

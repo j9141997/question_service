@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import { HeaderItem } from '../molecule/HeaderItem'
+import HeaderItem from '../molecule/HeaderItem'
 import DefaultLink from '../atom/DefaultLink'
+
+const Header: FC = () => (
+  <StyledAppBar position="static" color="default">
+    <ToolBar>
+      <LeftArea>
+        <HeaderTitle variant="h6">
+          <DefaultLink>Shitumon</DefaultLink>
+        </HeaderTitle>
+      </LeftArea>
+      <RightArea>
+        <HeaderItem />
+      </RightArea>
+    </ToolBar>
+  </StyledAppBar>
+)
 
 const StyledAppBar = styled(AppBar)`
   display: block;
@@ -27,20 +42,5 @@ const RightArea = styled.div`
   display: flex;
   font-size: 1.2rem;
 `
-
-const Header = () => (
-  <StyledAppBar position="static" color="default">
-    <ToolBar>
-      <LeftArea>
-        <HeaderTitle variant="h6">
-          <DefaultLink>Shitumon</DefaultLink>
-        </HeaderTitle>
-      </LeftArea>
-      <RightArea>
-        <HeaderItem />
-      </RightArea>
-    </ToolBar>
-  </StyledAppBar>
-)
 
 export default Header
