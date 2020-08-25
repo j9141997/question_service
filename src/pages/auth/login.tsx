@@ -1,15 +1,26 @@
-import React, { ComponentProps } from 'react'
-import Button from '@material-ui/core/Button'
-import { QuestionList } from '../../components/organism/QuestionList'
-import Form from '../../components/organism/Form'
+import React, { FC } from 'react'
 
-const login = (props) => (
-  <React.Fragment>
-    <h1>ログイン</h1>
-    <input type="text" name="email" />
-    <input type="text" name="password" />
-    <input type="submit" value="ログインする" />
-  </React.Fragment>
+import AuthContainer from '../../components/organism/AuthContainer'
+import Form from '../../components/organism/Form'
+import InputGroup from '../../components/molecule/InputGroup'
+import SubmitButton from '../../components/atom/SubmitButton'
+
+const login: FC = () => (
+  <AuthContainer>
+    <Form action="hogehoge">
+      <InputGroup
+        labelName="メールアドレス"
+        name="email"
+        placeholder="shitumon@shitumon.com"
+      />
+      <InputGroup
+        labelName="パスワード"
+        name="password"
+        placeholder="6文字以上で入力してください"
+      />
+      <SubmitButton value="ログインする" />
+    </Form>
+  </AuthContainer>
 )
 
 export default login

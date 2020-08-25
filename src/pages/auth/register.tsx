@@ -30,7 +30,7 @@ const register: FC = () => (
         name="password"
         placeholder="6文字以上で入力してください"
       />
-      <SubmitButton value="メールアドレスで登録" marginTop="24px" />
+      <SubmitButton value="メールアドレスで登録" />
     </Form>
   </AuthContainer>
 )
