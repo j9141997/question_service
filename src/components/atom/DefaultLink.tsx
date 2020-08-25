@@ -1,20 +1,15 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 import theme from '../theme'
 import styled from 'styled-components'
 
 type Props = {
   href?: string
-  children: string
 }
 
-const DefaultLink = ({ children, href }: Props) => (
+const DefaultLink: FC<Props> = ({ children, href = '/' }) => (
   <CommonLink href={href}>{children}</CommonLink>
 )
-
-DefaultLink.defaultProps = {
-  href: '/',
-}
 
 const CommonLink = styled.a`
   a {

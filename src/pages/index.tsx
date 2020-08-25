@@ -1,9 +1,8 @@
 import React, { ComponentProps, FC } from 'react'
 import { GetServerSideProps } from 'next'
-import Link from 'next/link'
 import axios from 'axios'
 import Button from '@material-ui/core/Button'
-import { QuestionList } from '../components/organism/QuestionList'
+import QuestionList from '../components/organism/QuestionList'
 import Form from '../components/organism/Form'
 
 type Props = {

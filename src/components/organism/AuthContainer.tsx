@@ -1,6 +1,12 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 
+const AuthContainer: FC = ({ children }) => (
+  <Article>
+    <CenterContainer>{children}</CenterContainer>
+  </Article>
+)
+
 const Article = styled.article`
   @media (min-width: 1024px) {
     width: 470px;
@@ -12,10 +18,5 @@ const Article = styled.article`
 const CenterContainer = styled.div`
   text-align: center;
 `
-const AuthContainer: FC = ({ children }) => (
-  <Article>
-    <CenterContainer>{children}</CenterContainer>
-  </Article>
-)
 
 export default AuthContainer
