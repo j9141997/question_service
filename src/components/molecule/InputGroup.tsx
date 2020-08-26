@@ -5,16 +5,26 @@ type Props = {
   labelName: string
   name: string
   placeholder?: string
+  type?: 'text' | 'number' | 'email' | 'password'
 }
 
-const InputGroup: FC<Props> = ({ labelName, name, placeholder }) => (
+const InputGroup: FC<Props> = ({
+  labelName,
+  name,
+  placeholder,
+  type = 'text',
+}) => (
   <Group>
     <Label htmlFor={name}>{labelName}</Label>
     <div>
-      <Input name={name} placeholder={placeholder} />
+      <Input name={name} placeholder={placeholder} type={type} />
     </div>
   </Group>
 )
+
+InputGroup.defaultProps = {
+  type: 'text',
+}
 
 const Group = styled.div`
   text-align: left;

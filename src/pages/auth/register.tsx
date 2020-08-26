@@ -29,6 +29,13 @@ const register: FC = () => (
         labelName="パスワード"
         name="password"
         placeholder="6文字以上で入力してください"
+        type="password"
+      />
+      <InputGroup
+        labelName="パスワードの確認"
+        name="password_confirmation"
+        placeholder="6文字以上で入力してください"
+        type="password"
       />
       <SubmitButton value="メールアドレスで登録" />
     </Form>
