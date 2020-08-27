@@ -14,15 +14,6 @@ const Index: FC<Props> = ({ questions }) => {
   return (
     <React.Fragment>
       <QuestionList questions={questions} />
-      <Button variant="contained" color="primary">
-        質問
-      </Button>
-      {/* <Form action="localhost:3001/questions">
-      <input type="text" name="question" />
-      <Button variant="contained" color="primary">
-        回答
-      </Button>
-    </Form> */}
     </React.Fragment>
   )
 }
