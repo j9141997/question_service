@@ -8,10 +8,10 @@ type Props = {
 }
 
 const SubmitButton = memo<Props>(({ value }) => {
-  return <Button type="submit" value={value} />
+  return <Button type="submit">{value}</Button>
 })
 
-const Button = styled.input`
+const Button = styled.button`
   font-size: 1.6rem;
   letter-spacing: 0.2px;
   height: 48px;
