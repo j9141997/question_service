@@ -3,7 +3,6 @@ import { GetServerSideProps } from 'next'
 import axios from '../utils/axios'
 
 import QuestionList from '../components/organism/QuestionList'
-import Button from '@material-ui/core/Button'
 
 type Props = {
   questions: ComponentProps<typeof QuestionList>['questions']
