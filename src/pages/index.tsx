@@ -12,6 +12,7 @@ type Props = {
 const Index: FC<Props> = ({ questions }) => {
   return (
     <React.Fragment>
+      <h1>the value: {process.env.FIREBASE_API_KEY}</h1>
       <QuestionList questions={questions} />
     </React.Fragment>
   )
