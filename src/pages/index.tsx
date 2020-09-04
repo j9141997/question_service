@@ -10,11 +10,7 @@ type Props = {
 }
 
 const Index: FC<Props> = ({ questions }) => {
-  return (
-    <React.Fragment>
-      <QuestionList questions={questions} />
-    </React.Fragment>
-  )
+  return <React.Fragment></React.Fragment>
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
