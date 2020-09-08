@@ -12,7 +12,7 @@ const HeaderItem: FC = () => (
       </Link>
     </HeaderItemContainer>
     <HeaderItemContainer>
-      <Link href="/auth/register" passHref>
+      <Link href="/auth/signup" passHref>
         <Button primary={true}>新規登録</Button>
       </Link>
     </HeaderItemContainer>
