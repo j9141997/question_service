@@ -5,19 +5,21 @@ type Props = {
   labelName: string
   name: string
   placeholder?: string
+  value: string | number
   type?: 'text' | 'number' | 'email' | 'password'
 }
 
 const InputGroup: FC<Props> = ({
   labelName,
   name,
+  value,
   placeholder,
   type = 'text',
 }) => (
   <Group>
     <Label htmlFor={name}>{labelName}</Label>
     <div>
-      <Input name={name} placeholder={placeholder} type={type} />
+      <Input name={name} placeholder={placeholder} type={type} value={value} />
     </div>
   </Group>
 )
