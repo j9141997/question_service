@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 import AuthContainer from '../../components/organism/AuthContainer'
 import Form from '../../components/organism/Form'
 import InputGroup from '../../components/molecule/InputGroup'
 import SubmitButton from '../../components/atom/SubmitButton'
 
-const login: FC = () => (
+const Signin: FC = () => (
   <AuthContainer>
     <Form action="hogehoge">
       <InputGroup
@@ -23,4 +23,4 @@ const login: FC = () => (
   </AuthContainer>
 )
 
-export default login
+export default Signin
