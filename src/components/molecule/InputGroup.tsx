@@ -7,6 +7,7 @@ type Props = {
   placeholder?: string
   value: string | number
   type?: 'text' | 'number' | 'email' | 'password'
+  onChange: () => void
 }
 
 const InputGroup: FC<Props> = ({
@@ -15,11 +16,18 @@ const InputGroup: FC<Props> = ({
   value,
   placeholder,
   type = 'text',
+  onChange,
 }) => (
   <Group>
     <Label htmlFor={name}>{labelName}</Label>
     <div>
-      <Input name={name} placeholder={placeholder} type={type} value={value} />
+      <Input
+        name={name}
+        placeholder={placeholder}
+        type={type}
+        defaultValue={value}
+        onChange={onChange}
+      />
     </div>
   </Group>
 )

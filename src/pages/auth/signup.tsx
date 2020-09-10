@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
 
@@ -28,21 +28,34 @@ const Signup: FC = () => {
     })
   }, [])
 
+  const changeValue = (e) => {}
+
+  const registerAuth = async () => {
+    try {
+      await auth.createUserWithEmailAndPassword(value.email, value.password)
+      Router.push('/')
+    } catch (error) {
+      alert(error.message)
+    }
+  }
+
   return (
     <AuthContainer>
-      <Form action="hogehoge">
-        <RegisterTitle>Shitumonへようこそ！</RegisterTitle>
+      <React.Fragment>
+        {/* <RegisterTitle>Shitumonへようこそ！</RegisterTitle> */}
         <InputGroup
           labelName="ニックネーム"
           name="nickname"
           placeholder="Shitumonmon"
           value={value.nickname}
+          onChange={changeValue}
         />
         <InputGroup
           labelName="メールアドレス"
           name="email"
           placeholder="shitumon@shitumon.com"
           value={value.email}
+          onChange={changeValue}
         />
         <InputGroup
           labelName="パスワード"
@@ -50,9 +63,13 @@ const Signup: FC = () => {
           placeholder="6文字以上で入力してください"
           type="password"
           value={value.password}
+          onChange={changeValue}
         />
-        <SubmitButton value="メールアドレスで登録" />
-      </Form>
+        <SubmitButton
+          value="メールアドレスで登録"
+          onClick={registerAuth}
+        ></SubmitButton>
+      </React.Fragment>
     </AuthContainer>
   )
 }

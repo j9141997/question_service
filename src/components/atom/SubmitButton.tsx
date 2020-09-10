@@ -5,10 +5,15 @@ import theme from '../theme'
 
 type Props = {
   value: string
+  onClick: () => void
 }
 
-const SubmitButton = memo<Props>(({ value }) => {
-  return <Button type="submit">{value}</Button>
+const SubmitButton = memo<Props>(({ value, onClick }) => {
+  return (
+    <Button type="submit" onClick={onClick}>
+      {value}
+    </Button>
+  )
 })
 
 const Button = styled.button`
