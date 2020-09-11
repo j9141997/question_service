@@ -28,7 +28,9 @@ const Signup: FC = () => {
     })
   }, [])
 
-  const changeValue = (e) => {}
+  const changeValue = (e) => {
+    console.log(e.tartget)
+  }
 
   const registerAuth = async () => {
     try {
