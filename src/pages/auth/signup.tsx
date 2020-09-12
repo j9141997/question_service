@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react'
+import React, { FC, useState, useEffect, useContext } from 'react'
 import Router from 'next/router'
 import styled from 'styled-components'
 
@@ -8,6 +8,7 @@ import InputGroup from '../../components/molecule/InputGroup'
 import SubmitButton from '../../components/atom/SubmitButton'
 
 import auth from '../../utils/firebase'
+import { AuthContext } from '../../context/Auth'
 
 type valueProps = {
   nickname: string
@@ -16,6 +17,7 @@ type valueProps = {
 }
 
 const Signup: FC = () => {
+  const { currentUser } = useContext(AuthContext)
   const [value, setValue] = useState<valueProps>({
     nickname: '',
     email: '',
@@ -23,12 +25,15 @@ const Signup: FC = () => {
   })
 
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      user && Router.push('/')
-    })
-  }, [])
+    currentUser && Router.push('/')
+  }, [currentUser])
 
-  const changeValue = (e) => {}
+  const changeValue = (e) => {
+    setValue({
+      ...value,
+      [e.target.name]: e.target.value,
+    })
+  }
 
   const registerAuth = async () => {
     try {
