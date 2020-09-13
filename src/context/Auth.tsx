@@ -1,7 +1,7 @@
 import { User } from 'firebase'
 import React, { FC, createContext, useEffect, useState } from 'react'
 
-import auth from '../utils/firebase'
+import firebase from '../utils/firebase'
 
 type AuthContextPrpos = {
   currentUser: User | null | undefined
@@ -16,7 +16,7 @@ const AuthProvider: FC = ({ children }) => {
 
   useEffect(() => {
     // ログイン状態が変化するとfirebaseのauthメソッドを呼び出す
-    auth.onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
       setCurrentUser(user)
     })
   }, [])
