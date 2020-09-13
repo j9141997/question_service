@@ -12,10 +12,16 @@ type Props = {
 
 const Index: FC<Props> = ({ questions }) => {
   const { currentUser } = useContext(AuthContext)
-  console.log(currentUser)
   return (
     <React.Fragment>
-      <div className="auth"></div>
+      <div className="auth">
+        {currentUser && (
+          <div>
+            {currentUser.email}
+            {currentUser.uid}
+          </div>
+        )}
+      </div>
       <QuestionList questions={questions} />
     </React.Fragment>
   )

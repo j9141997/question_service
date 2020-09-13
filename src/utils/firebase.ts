@@ -1,4 +1,5 @@
-import firebase from 'firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 const config = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -14,6 +15,4 @@ if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }
 
-// Authを作成し、export
-const Auth = firebase.auth()
-export default Auth
+export default firebase
