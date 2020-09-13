@@ -2,7 +2,7 @@ import React, { ComponentProps, FC, useContext } from 'react'
 import { GetServerSideProps } from 'next'
 import axios from '../utils/axios'
 
-import QuestionList from '../components/organism/QuestionList'
+import QuestionList from '@components/organism/QuestionList'
 import { AuthContext } from '../context/Auth'
 
 type Props = {
@@ -22,7 +22,7 @@ const Index: FC<Props> = ({ questions }) => {
           </div>
         )}
       </div>
-      <QuestionList questions={questions} />
+      {/* <QuestionList questions={questions} /> */}
     </React.Fragment>
   )
 }

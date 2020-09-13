@@ -14,20 +14,24 @@ const HeaderItem: FC = () => {
   }
   return (
     <React.Fragment>
-      <HeaderItemContainer>
-        {currentUser ? (
+      {currentUser ? (
+        <HeaderItemContainer>
           <button onClick={logout}>ログアウト</button>
-        ) : (
-          <React.Fragment>
+        </HeaderItemContainer>
+      ) : (
+        <React.Fragment>
+          <HeaderItemContainer>
             <Link href="/auth/signin" passHref>
               <Button primary={false}>ログイン</Button>
             </Link>
+          </HeaderItemContainer>
+          <HeaderItemContainer>
             <Link href="/auth/signup" passHref>
               <Button primary={true}>新規登録</Button>
             </Link>
-          </React.Fragment>
-        )}
-      </HeaderItemContainer>
+          </HeaderItemContainer>
+        </React.Fragment>
+      )}
     </React.Fragment>
   )
 }
