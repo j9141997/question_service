@@ -4,6 +4,4 @@ type Props = {
   title: string
 }
 
-export const Panel: FC<Props> = {
-  title,
-}
+export const Panel: FC<Props> = ({ title }) => {}
