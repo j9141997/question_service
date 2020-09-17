@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { Base } from '@components/Base/Base'
 
 type Props = {
@@ -10,9 +10,13 @@ type Props = {
 export const Panel: FC<Props> = ({ title, className = '' }) => {
   return (
     <Wrapper className={className}>
-      <Header></Header>
+      <Header>{title}</Header>
     </Wrapper>
   )
 }
 
-const Wrapper = styled(Base)
+const Wrapper = styled(Base)`
+  ${({}) => {
+    return css``
+  }}
+`
