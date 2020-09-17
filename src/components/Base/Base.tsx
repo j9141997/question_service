@@ -1,4 +1,4 @@
-import React, { ReactNode, forwardRef } from react
+import React, { ReactNode, forwardRef } from 'react'
 import styled, { css } from 'styled-components'
 
 type Props = {
