@@ -1,5 +1,7 @@
+import { PaletteProps } from "./createPalette"
 
 type ThemeProps = {
-  palette?: PaletteProp
+  palette?: PaletteProps
+  
 }
 export const createTheme = (theme: )

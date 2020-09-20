@@ -13,3 +13,11 @@ export type PaletteProps = {
   OVERLAY?: string
   OUTLINE?: string
 }
+
+export const defaultPalette = {
+  TEXT_BLACK: 'rgba(0, 0, 0, 0.87)',
+  MAIN: '6b9e7c',
+  secondary: '19857b',
+}
+
+export const createPalette = (usePalette: PaletteProps = {}) => {}
