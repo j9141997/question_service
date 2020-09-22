@@ -19,6 +19,4 @@ export const defaultPalette = {
   BORDER: '#8e8e93',
 }
 
-export const createPalette = (usePalette: PaletteProps = {}) => {
-  const created: Created
-}
+export const createPalette = (usePalette: PaletteProps = {}) => {}
