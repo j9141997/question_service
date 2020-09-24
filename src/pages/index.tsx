@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 import axios from '../utils/axios'
 
 import QuestionList from '@components/organism/QuestionList'
-import { AuthContext } from '../context/Auth'
+import { AuthContext } from '../hooks/Auth'
 
 type Props = {
   questions: ComponentProps<typeof QuestionList>['questions']

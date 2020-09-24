@@ -8,7 +8,7 @@ import InputGroup from '../../components/molecule/InputGroup'
 import SubmitButton from '../../components/atom/SubmitButton'
 
 import auth from '../../utils/firebase'
-import { AuthContext } from '../../context/Auth'
+import { AuthContext } from '../../hooks/Auth'
 
 type valueProps = {
   nickname: string
