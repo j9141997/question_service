@@ -1,3 +1,6 @@
+import { merge } from 'lodash'
+import { darken, rgba, transparentize } from 'polished'
+
 export type PaletteProps = {
   TEXT_BLACK?: string
   TEXT_DISABLED?: string
@@ -6,6 +9,20 @@ export type PaletteProps = {
   BACKGROUND?: string
   MAIN?: string
   DANGER?: string
+  OUTLINE?: string
+}
+
+export type CreatedPaletteTheme = {
+  hoverColor: (value: string) => string
+  disableColor: (value: string) => string
+  TEXT_BLACK: string
+  TEXT_DISABLED: string
+  TEXT_LINK: string
+  BORDER: string
+  BACKGROUND: string
+  MAIN: string
+  DANGER: string
+  OUTLINE: string
 }
 
 export const defaultPalette = {
@@ -18,4 +35,20 @@ export const defaultPalette = {
   DANGER: '#ff8800',
 }
 
-export const createPalette = (usePalette: PaletteProps = {}) => {}
+export const createPalette = (
+  usePalette: PaletteProps = {}
+): CreatedPaletteTheme => {
+  const created: CreatedPaletteTheme = merge(
+    {
+      hoverColor: (value: string): string => darken(0.05, value),
+      disableColor: (value: string): string => rgba(value, 0.5),
+      OUTLINE: transparentize(0.5, defaultPalette.MAIN),
+      ...defaultPalette,
+    },
+    usePalette,
+    usePalette.OUTLINE == null && usePalette.MAIN != null
+      ? { OUTLINE: transparentize(0.5, usePalette.MAIN) }
+      : null
+  )
+  return created
+}
