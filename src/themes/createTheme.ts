@@ -1,4 +1,4 @@
-import { PaletteProps } from "./createPalette"
+import { PaletteProps, CreatedPaletteTheme, createPalette } from "./createPalette"
 
 type ThemeProps = {
   palette?: PaletteProps
