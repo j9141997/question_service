@@ -4,7 +4,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 import Button from '../atom/Button'
-import { AuthContext } from '../../context/Auth'
+import { AuthContext } from '../../hooks/Auth'
 
 const HeaderItem: FC = () => {
   const { currentUser } = useContext(AuthContext)

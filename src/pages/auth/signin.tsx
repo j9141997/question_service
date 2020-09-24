@@ -6,7 +6,7 @@ import AuthContainer from '../../components/organism/AuthContainer'
 import Form from '../../components/organism/Form'
 import InputGroup from '../../components/molecule/InputGroup'
 import SubmitButton from '../../components/atom/SubmitButton'
-import { AuthContext } from '../../context/Auth'
+import { AuthContext } from '../../hooks/Auth'
 
 const Signin: FC = () => {
   const { currentUser } = useContext(AuthContext)

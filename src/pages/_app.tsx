@@ -4,7 +4,7 @@ import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-component
 import { ThemeProvider as MaterialUIThemeProvider } from '@material-ui/core/styles'
 import { StylesProvider } from '@material-ui/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { AuthProvider } from '../context/Auth'
+import { AuthProvider } from '../hooks/Auth'
 import Layout from '../components/template/layout'
 import theme from '../components/theme'
 import { GlobalStyle } from '../style/globalStyle'
