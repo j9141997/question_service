@@ -36,7 +36,7 @@ export const defaultPalette = {
 }
 
 export const createPalette = (
-  usePalette: PaletteProps = {}
+  userPalette: PaletteProps = {}
 ): CreatedPaletteTheme => {
   const created: CreatedPaletteTheme = merge(
     {
@@ -45,9 +45,9 @@ export const createPalette = (
       OUTLINE: transparentize(0.5, defaultPalette.MAIN),
       ...defaultPalette,
     },
-    usePalette,
-    usePalette.OUTLINE == null && usePalette.MAIN != null
-      ? { OUTLINE: transparentize(0.5, usePalette.MAIN) }
+    userPalette,
+    userPalette.OUTLINE == null && userPalette.MAIN != null
+      ? { OUTLINE: transparentize(0.5, userPalette.MAIN) }
       : null
   )
   return created
