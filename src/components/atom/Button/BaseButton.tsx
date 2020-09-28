@@ -21,4 +21,20 @@ export type BaseProps = {
   wide?: boolean
 }
 
-export const buttonFactory: fc
+export const buttonFactory: <T extends BaseProps>(tag: Tag) => FC<T> = (
+  tag
+) => {
+  // const Tag =
+
+  return ({
+    size = 'default',
+    className = '',
+    square = false,
+    children = '',
+    prefix = '',
+    suffix = '',
+    ...props
+  }) => {
+    const theme = useTheme()
+  }
+}
