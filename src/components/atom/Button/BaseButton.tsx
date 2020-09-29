@@ -39,5 +39,9 @@ export const buttonFactory: <T extends BaseProps>(tag: Tag) => FC<T> = (
 
     // prettier-ignore
     const classNames = `${size} ${className} ${square ? 'square' : ''} ${prefix ? 'prefix' : ''} ${suffix ? 'suffix' : ''}`
+
+    return (
+      
+    )
   }
 }
