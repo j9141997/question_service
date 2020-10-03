@@ -21,6 +21,7 @@ export type BaseProps = {
   wide?: boolean
 }
 
+
 export const buttonFactory: <T extends BaseProps>(tag: Tag) => FC<T> = (
   tag
 ) => {
