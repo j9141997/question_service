@@ -1,5 +1,5 @@
-import React, { useState, MouseEvent, ReactElement } from 'react'
-import { isMouseDevise, isTouchDevise } from '../libs/ua'
+import { useState, MouseEvent } from 'react'
+import { isMouseDevice, isTouchDevice } from '../libs/ua'
 
 export type ExternalProps = {
   className?: string
@@ -27,28 +27,28 @@ export const useHoverable: any = (props) => {
   const onMouseEnter = (e: MouseEvent) => {
     const { onMouseEnter } = props
     if (onMouseEnter) onMouseEnter(e)
-    if (isTouchDevise) return
+    if (isMouseDevice) return
     setIsHover(true)
   }
 
   const onMouseLeave = (e: MouseEvent) => {
     const { onMouseLeave } = props
     if (onMouseLeave) onMouseLeave(e)
-    if (isTouchDevise) return
+    if (isMouseDevice) return
     setIsHover(false)
   }
 
   const onTouchStart = (e: TouchEvent) => {
     const { onTouchStart } = props
     if (onTouchStart) onTouchStart(e)
-    if (isMouseDevise) return
+    if (isTouchDevice) return
     setIsHover(true)
   }
 
   const onTouchEnd = (e: TouchEvent) => {
-    const { onTouchStart } = props
-    if (onTouchStart) onTouchStart(e)
-    if (isMouseDevise) return
+    const { onTouchEnd } = props
+    if (onTouchEnd) onTouchEnd(e)
+    if (isTouchDevice) return
     setIsHover(false)
   }
 
@@ -61,32 +61,4 @@ export const useHoverable: any = (props) => {
     onTouchEnd: onTouchEnd,
     ...props,
   }
-
-  return [
-    isHover,
-    onMouseEnter,
-    onMouseLeave,
-    onTouchStart,
-    onTouchEnd,
-    ...props,
-  ]
 }
-// export const useHoverable: React.FC = ({
-//   WrappedComponent,
-//   ...props
-// }): ReactElement => {
-//   const [isHover, setIsHover] = useState(false)
-
-//   return (
-//     <WrappedComponent
-//       {...props}
-//       className={`${isHover ? hoverClassName : ''} ${
-//         this.props.className || ''
-//       }`}
-//       onMouseEnter={this.onMouseEnter}
-//       onMouseLeave={this.onMouseLeave}
-//       onTouchStart={this.onTouchStart}
-//       onTouchEnd={this.onTouchEnd}
-//     />
-//   )
-// }
